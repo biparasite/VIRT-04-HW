@@ -69,7 +69,7 @@ CMD ["python", "main.py"]
 
 <details> <summary>отчет сканирования</summary>
 
-https://github.com/biparasite/VIRT-04-HW/vulnerabilities.csv
+https://github.com/biparasite/VIRT-04-HW/blob/main/vulnerabilities.csv
 
 ![task2](https://github.com/biparasite/VIRT-04-HW/blob/main/task_2.png "task2")
 
