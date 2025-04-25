@@ -118,7 +118,7 @@ https://github.com/biparasite/VIRT-04-HW/blob/main/vulnerabilities.csv
 ```bash
 #!/bin/bash
 
-REPO_URL="https://github.com/biparasite/VIRT-04-HW.git"
+REPO_URL="https://github.com/biparasite/shvirtd-example-python.git"
 TARGET_DIR="/opt/shvirtd-example-python"
 
 if [ "$EUID" -ne 0 ]; then
@@ -150,6 +150,12 @@ cd "$TARGET_DIR" || exit
 sudo docker compose up -d
 
 ```
+
+</details>
+
+<details> <summary>fork repo</summary>
+
+https://github.com/biparasite/shvirtd-example-python.git
 
 </details>
 
