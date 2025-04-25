@@ -95,8 +95,6 @@ https://github.com/biparasite/VIRT-04-HW/blob/main/vulnerabilities.csv
 
 ### Ответ
 
----
-
 ![task3](https://github.com/biparasite/VIRT-04-HW/blob/main/task_3.1.png "task3")
 
 ---
@@ -111,8 +109,6 @@ https://github.com/biparasite/VIRT-04-HW/blob/main/vulnerabilities.csv
 
    В качестве ответа повторите sql-запрос и приложите скриншот с данного сервера, bash-скрипт и ссылку на fork-репозиторий.
 
----
-
 ### Ответ
 
 ![task4](https://github.com/biparasite/VIRT-04-HW/blob/main/task_4.1.png "task4")
@@ -121,6 +117,10 @@ https://github.com/biparasite/VIRT-04-HW/blob/main/vulnerabilities.csv
 
 ```bash
 #!/bin/bash
+
+REPO_URL="https://github.com/biparasite/VIRT-04-HW.git"
+TARGET_DIR="/opt/shvirtd-example-python"
+
 if [ "$EUID" -ne 0 ]; then
   echo "Pls, try run with sudo"
   exit
@@ -143,16 +143,56 @@ echo \
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-
-REPO_URL="https://github.com/biparasite/VIRT-04-HW.git"
-TARGET_DIR="/opt/shvirtd-example-python"
-
 git clone "$REPO_URL" "$TARGET_DIR"
 
 cd "$TARGET_DIR" || exit
 
-docker compose up -d
+sudo docker compose up -d
 
 ```
 
 </details>
+
+---
+
+## Задача 6
+
+Скачайте docker образ hashicorp/terraform:latest и скопируйте бинарный файл /bin/terraform на свою локальную машину, используя dive и docker save. Предоставьте скриншоты действий .
+
+### Ответ
+
+```bash
+docker pull hashicorp/terraform:latest
+docker save -o terraform.tar hashicorp/terraform:latest
+```
+
+<details> <summary>drive</summary>
+
+![task6](https://github.com/biparasite/VIRT-04-HW/blob/main/task_6.1.png "task1")
+
+</details>
+
+<details> <summary>unpack blob</summary>
+
+![task6](https://github.com/biparasite/VIRT-04-HW/blob/main/task_6.1.1.png "task1")
+
+</details>
+
+## Задача 6.1
+
+Добейтесь аналогичного результата, используя docker cp.
+Предоставьте скриншоты действий .
+
+### Ответ
+
+```bash
+docker run -d hashicorp/terraform
+```
+
+<details> <summary>docker cp</summary>
+
+![task6](https://github.com/biparasite/VIRT-04-HW/blob/main/task_6.2.png "task2")
+
+</details>
+
+---
